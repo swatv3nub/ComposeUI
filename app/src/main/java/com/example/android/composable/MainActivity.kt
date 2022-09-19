@@ -8,6 +8,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.tooling.preview.Preview
 
 import com.example.android.composable.ui.theme.composableTheme
+import com.example.android.composable.screen.*
 
 
 class MainActivity : ComponentActivity() {
@@ -15,20 +16,33 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             composableTheme {
-                MainScreen()
+                mainApp()
             }
         }
+    }
+}
+
+@Composable
+fun mainApp() {
+    var showOnboarding by remember {
+        mutableStateOf(true)
+    }
+    if (showOnboarding) {
+        OnboardingScreen(onContinueClicked = { showOnboarding = false})
+    } else {
+        MainScreen()
     }
 }
 
 
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES,
     showBackground = false,
-    name = "UI Formation - Dark Mode")
+    name = "UI Formation - Dark Mode",
+    widthDp = 420)
 @Composable
 fun PreviewMessageBox() {
     composableTheme {
-        MainScreen()
+        mainApp()
     }
 }
 
