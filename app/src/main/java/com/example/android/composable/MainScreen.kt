@@ -34,51 +34,6 @@ fun MainScreen() {
     }
 }
 
-@Composable
-fun BottomBar(navController: NavHostController) {
-    val screens = listOf(
-        BottomBarScreen.Python,
-        BottomBarScreen.Rust,
-        BottomBarScreen.Kotlin,
-    )
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentDestination = navBackStackEntry?.destination
-
-    BottomNavigation() {
-        screens.forEach() { screen ->
-            AddItem(screen = screen,
-                currentDestination = currentDestination,
-                navController = navController)
-        }
-
-    }
-
-}
-
-@Composable
-fun RowScope.AddItem(
-    screen: BottomBarScreen,
-    currentDestination: NavDestination?,
-    navController: NavHostController
-) {
-    BottomNavigationItem(
-        label = {
-            Text(text = screen.title)
-        },
-        icon = {
-            Icon(
-                imageVector = screen.icon,
-                contentDescription = "Navigation Icons"
-            )
-        },
-        selected = currentDestination?.hierarchy?.any() {
-            it.route == screen.route
-        } == true,
-        onClick = {
-            navController.navigate(screen.route)
-        }
-    )
-}
 
 @Composable
 fun Convo(messageList : List<Message>){

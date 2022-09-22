@@ -6,17 +6,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.android.composable.ui.theme.composableTheme
 
 @Composable
-fun Python() {
+fun Settings() {
     composableTheme() {
         Text(text = "")
 
     }
-
+    
 }
 
 @Preview
 @Composable
-fun PythonPreview() {
+fun KotlinPreview() {
     composableTheme() {
         Text(text = "")
 

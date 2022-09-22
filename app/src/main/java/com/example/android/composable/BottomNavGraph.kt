@@ -4,25 +4,25 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.android.composable.screen.Kotlin
-import com.example.android.composable.screen.Python
-import com.example.android.composable.screen.Rust
+import com.example.android.composable.screen.Profile
+import com.example.android.composable.MainScreen
+import com.example.android.composable.screen.Settings
 
 
 @Composable
 fun BottomNavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = BottomBarScreen.Python.route
+        startDestination = BottomBarScreen.MainScreen.route
     ) {
-        composable(route = BottomBarScreen.Python.route) {
-            Python()
+        composable(route = BottomBarScreen.MainScreen.route) {
+            //MainScreen()
         }
-        composable(route = BottomBarScreen.Rust.route) {
-            Rust()
+        composable(route = BottomBarScreen.Profile.route) {
+            Profile()
         }
-        composable(route = BottomBarScreen.Kotlin.route) {
-            Kotlin()
+        composable(route = BottomBarScreen.Settings.route) {
+            Settings()
         }
     }
 }

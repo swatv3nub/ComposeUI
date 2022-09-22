@@ -21,21 +21,33 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun OnboardingScreen(onContinueClicked: () -> Unit) {
     Surface{
-        Column(modifier = Modifier.fillMaxSize()
+        Column(modifier = Modifier
+            .fillMaxSize()
             .background(color = Color.Black),
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
-                painter = painterResource(id = R.drawable.maskedvirus),
+                painter = painterResource(id = R.drawable.ic_launcher_foreground),
                 contentDescription = "Compose Camp", modifier = Modifier
-                    .size(200.dp)
-                    .padding(bottom = 50.dp)
-                    //.clip(CircleShape)
+                    .size(300.dp)
+                //.padding(bottom = 5.dp)
+                //.clip(CircleShape)
             )
             Text("Welcome to Learning Programming Language!\n \nHere you can learn the basics to advanced " +
                 "level of programming in Different Languages!", textAlign = TextAlign.Center)
-            Button(onClick = onContinueClicked,
+            /*Button(onClick = onContinueClicked,
             modifier = Modifier.padding(vertical = 24.dp)) {
+                Text("Continue")
+            }*/
+        }
+        Column(modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Bottom,
+        horizontalAlignment = Alignment.CenterHorizontally) {
+            Button(onClick = onContinueClicked,
+                modifier = Modifier
+                    .height(60.dp)
+                    .width(300.dp)
+                    .padding(bottom = 5.dp)) {
                 Text("Continue")
             }
         }

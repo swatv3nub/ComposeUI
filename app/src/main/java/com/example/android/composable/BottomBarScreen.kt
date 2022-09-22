@@ -11,18 +11,18 @@ sealed class BottomBarScreen(
     var title: String,
     var icon: ImageVector
 ) {
-    object Python : BottomBarScreen(
-        route = "python",
+    object MainScreen : BottomBarScreen(
+        route = "MainScreen",
         title = "Home",
         icon = Icons.Default.Home
     )
-    object Rust : BottomBarScreen(
-        route = "rust",
+    object Profile : BottomBarScreen(
+        route = "profile",
         title = "Profile",
         icon = Icons.Default.Person
     )
-    object Kotlin : BottomBarScreen(
-        route = "kotlin",
+    object Settings : BottomBarScreen(
+        route = "settings",
         title = "Settings",
         icon = Icons.Default.Settings
     )

@@ -16,14 +16,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             composableTheme {
-                mainApp()
+                MainApp()
             }
         }
     }
 }
 
 @Composable
-fun mainApp() {
+fun MainApp() {
     var showOnboarding by remember {
         mutableStateOf(true)
     }
@@ -42,7 +42,7 @@ fun mainApp() {
 @Composable
 fun PreviewMessageBox() {
     composableTheme {
-        mainApp()
+        MainApp()
     }
 }
 
