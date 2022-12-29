@@ -30,7 +30,7 @@ fun MainApp() {
     if (showOnboarding) {
         OnboardingScreen(onContinueClicked = { showOnboarding = false})
     } else {
-        MainScreen()
+        HomeScreen()
     }
 }
 

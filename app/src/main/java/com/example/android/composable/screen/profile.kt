@@ -18,9 +18,8 @@ fun Profile() {
 @Preview
 @Composable
 fun RustPreview() {
-    composableTheme() {
-        Text(text = "")
-
+    composableTheme {
+        Profile()
     }
 
 }

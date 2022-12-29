@@ -16,10 +16,9 @@ fun Settings() {
 
 @Preview
 @Composable
-fun KotlinPreview() {
-    composableTheme() {
-        Text(text = "")
-
+fun SettingsPreview() {
+    composableTheme {
+        Settings()
     }
 
 }
